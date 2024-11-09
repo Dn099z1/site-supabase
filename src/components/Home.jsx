@@ -4,7 +4,7 @@ import './Home.css';
 
 const Home = () => {
   const [name, setName] = useState('');
-  const [validUntil, setValidUntil] = useState(''); // Usar string para input de data
+  const [validUntil, setValidUntil] = useState(''); 
   const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
@@ -12,7 +12,7 @@ const Home = () => {
     try {
       const response = await axios.post('http://localhost:5000/add-license', { 
         name,
-        valid_until: new Date(validUntil).toISOString(), // Converte para string ISO
+        valid_until: new Date(validUntil).toISOString(), 
       });
       setMessage('Licença adicionada com sucesso!');
     } catch (error) {
